@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './PNWExperiencePage.css'
 
 const pageData = [
@@ -6,7 +7,7 @@ const pageData = [
     navLabel: 'During',
     title: 'During the Conference',
     description:
-      'Short, practical options attendees can fit around conference sessions and evening plans.',
+      'Short and practical options that fit naturally between sessions, evening receptions, and team dinners.',
     headerImage:
       '/pnw-images/https---source-unsplash-com-1600x900--seattle-skyline.jpg',
     groups: [
@@ -17,16 +18,17 @@ const pageData = [
             title: 'Seattle Waterfront Walk',
             duration: '1–2 hours',
             location: 'Seattle Waterfront',
-            description: 'Flat route with views, piers, and easy food stops near downtown.',
+            description:
+              'A flat waterfront route with piers, lookout points, and convenient food stops near downtown hotels.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--seattle-waterfront.jpg',
           },
           {
             title: 'Pike Place + Downtown',
             duration: '1–2 hours',
-            location: 'Pike Place Market and Downtown Seattle',
+            location: 'Pike Place Market & Downtown',
             description:
-              'A short loop through market highlights, central retail streets, and public art.',
+              'A compact loop through market highlights, central shopping streets, and public art installations.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--pike-place-market.jpg',
           },
@@ -38,52 +40,29 @@ const pageData = [
           {
             title: 'Argosy Harbor Cruise',
             duration: '3 hours total',
-            location: 'Seattle Central Waterfront',
+            location: 'Central Waterfront',
             description:
-              'Scheduled harbor cruise with skyline views and narrated context on local landmarks.',
+              'A scheduled harbor cruise with skyline views and concise narration on Seattle maritime landmarks.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--seattle-ferry.jpg',
           },
           {
             title: 'Seattle MTB Trail Ride',
             duration: '3–5 hours',
-            location: 'Regional trails near Seattle',
+            location: 'Regional trail network',
             description:
-              'Guided or self-planned mountain bike route for attendees seeking outdoor activity.',
+              'A guided or self-planned mountain biking session for attendees seeking a higher-activity outing.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--seattle-mountain-bikin.jpg',
           },
           {
             title: 'Seattle Highlights',
             duration: '3–4 hours',
-            location: 'Seattle Center and Downtown',
+            location: 'Seattle Center & Downtown',
             description:
-              'Broad city sampler including observation points, neighborhoods, and transit access.',
+              'A broad sampler covering signature viewpoints, notable districts, and easy transit connections.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--space-needle.jpg',
-          },
-        ],
-      },
-      {
-        title: 'Flexible (2–4 hours self-paced)',
-        cards: [
-          {
-            title: 'Seattle CityPASS Attractions',
-            duration: '2–4 hours (flexible)',
-            location: 'Multiple Seattle attractions',
-            description:
-              'Pick one or more included attractions based on open hours and your conference schedule.',
-            image:
-              '/pnw-images/https---source-unsplash-com-1600x900--space-needle.jpg',
-          },
-          {
-            title: 'Museum / Market / Waterfront Mix',
-            duration: '2–4 hours (self-paced)',
-            location: 'Downtown Seattle core',
-            description:
-              'Build a custom sequence of museum time, market stops, and waterfront walking.',
-            image:
-              '/pnw-images/https---source-unsplash-com-1600x900--seattle-waterfront.jpg',
           },
         ],
       },
@@ -92,47 +71,47 @@ const pageData = [
   {
     id: 'pre-trip',
     navLabel: 'Pre-Trip',
-    title: 'Pre-Trip (Full Day)',
+    title: 'Pre-Trip Planning',
     description:
-      'Full-day options for attendees arriving early and planning one substantial outing.',
+      'Full-day itineraries for attendees arriving early and setting aside one substantial regional excursion.',
     headerImage:
       '/pnw-images/https---source-unsplash-com-1600x900--mount-rainier-meadow.jpg',
     groups: [
       {
-        title: 'Full Day',
+        title: 'Full Day Excursions',
         cards: [
           {
             title: 'Mount Rainier National Park',
             duration: '8–12 hours',
-            location: 'Mount Rainier area, Washington',
+            location: 'Mount Rainier, Washington',
             description:
-              'Day trip focused on alpine scenery, visitor centers, and seasonal trail access.',
+              'An alpine day trip built around visitor center stops, scenic drives, and seasonal trail access.',
             image: '/pnw-images/https---source-unsplash-com-1600x900--mount-rainier.jpg',
           },
           {
             title: 'Olympic National Park',
             duration: '10–12 hours',
-            location: 'Olympic Peninsula, Washington',
+            location: 'Olympic Peninsula',
             description:
-              'Longer excursion with coast, forest, or mountain stops depending on route conditions.',
+              'A longer outing with flexible routing across coast, rainforest, or mountain viewpoints.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--olympic-national-park.jpg',
           },
           {
-            title: 'North Cascades',
+            title: 'North Cascades Scenic Route',
             duration: '10–12 hours',
-            location: 'North Cascades region, Washington',
+            location: 'North Cascades region',
             description:
-              'Scenic highway day with mountain viewpoints, short trails, and small-town stops.',
+              'A mountain-focused highway day with short walks, scenic overlooks, and small-town stops.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--north-cascades.jpg',
           },
           {
-            title: 'San Juan Kayaking',
+            title: 'San Juan Islands Kayaking',
             duration: '8–11 hours',
-            location: 'San Juan Islands, Washington',
+            location: 'San Juan Islands',
             description:
-              'Island-focused day that combines ferry timing with guided paddling windows.',
+              'An island itinerary that combines ferry timing with guided paddling windows.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--san-juan-islands-kayak.jpg',
           },
@@ -143,9 +122,9 @@ const pageData = [
   {
     id: 'post-trip',
     navLabel: 'Post-Trip',
-    title: 'Post-Trip (Extensions)',
+    title: 'Post-Trip Extensions',
     description:
-      'Additional travel options for attendees extending their stay after the conference.',
+      'Additional destinations for attendees extending their stay after the conference concludes.',
     headerImage:
       '/pnw-images/https---source-unsplash-com-1600x900--vancouver-canada-skyli.jpg',
     groups: [
@@ -155,27 +134,27 @@ const pageData = [
           {
             title: 'Vancouver',
             duration: '2–3 days',
-            location: 'Vancouver, British Columbia',
+            location: 'British Columbia, Canada',
             description:
-              'Urban extension with parks, waterfront districts, and cross-border transit options.',
+              'A polished urban extension with waterfront districts, parks, and broad transit options.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--vancouver-canada-skyli.jpg',
           },
           {
             title: 'Portland',
             duration: '1–3 days',
-            location: 'Portland, Oregon',
+            location: 'Oregon, USA',
             description:
-              'City extension accessible by rail, flight, or drive with flexible neighborhood planning.',
+              'A flexible city extension by rail, flight, or drive with diverse neighborhood itineraries.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--portland-bridge-cyclin.jpg',
           },
           {
             title: 'Leavenworth',
             duration: '1–2 days',
-            location: 'Leavenworth, Washington',
+            location: 'Washington, USA',
             description:
-              'Mountain town trip with seasonal events, trails, and compact downtown walking routes.',
+              'A compact mountain town break with seasonal events and walkable downtown streets.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--leavenworth-washington.jpg',
           },
@@ -184,21 +163,21 @@ const pageData = [
             duration: '1 day',
             location: 'Snoqualmie, Washington',
             description:
-              'Simple regional outing centered on viewpoints and nearby scenic driving corridors.',
+              'A straightforward regional outing centered on viewpoints and scenic driving routes.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--snoqualmie-falls.jpg',
           },
         ],
       },
       {
-        title: 'Cruises (3–7+ days)',
+        title: 'Cruise Extensions',
         cards: [
           {
             title: 'Alaska Cruise from Seattle',
             duration: '3–7+ days',
-            location: 'Departing Seattle, Washington',
+            location: 'Departing Seattle',
             description:
-              'Post-conference cruise extension with itinerary lengths varying by route and line.',
+              'A post-conference cruise option with multiple itinerary lengths and route structures.',
             image:
               '/pnw-images/https---source-unsplash-com-1600x900--alaska-cruise-glacier.jpg',
           },
@@ -208,22 +187,42 @@ const pageData = [
   },
 ]
 
+function ScenicImage({ src, alt, className, fallbackLabel }) {
+  const [hasError, setHasError] = useState(false)
+
+  if (hasError || !src) {
+    return (
+      <div className={`${className} image-fallback`} role="img" aria-label={alt}>
+        <span>{fallbackLabel}</span>
+      </div>
+    )
+  }
+
+  return <img src={src} alt={alt} className={className} loading="lazy" onError={() => setHasError(true)} />
+}
+
 function PlanCard({ card }) {
   return (
     <article className="plan-card">
-      <img src={card.image} alt={card.title} className="plan-card__image" loading="lazy" />
+      <ScenicImage
+        src={card.image}
+        alt={card.title}
+        className="plan-card__image"
+        fallbackLabel="Image unavailable"
+      />
       <div className="plan-card__content">
         <h4>{card.title}</h4>
-        <p className="meta">
-          <strong>Duration:</strong> {card.duration}
-        </p>
-        <p className="meta">
-          <strong>Location:</strong> {card.location}
-        </p>
+        <dl className="plan-card__meta">
+          <div>
+            <dt>Duration</dt>
+            <dd>{card.duration}</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{card.location}</dd>
+          </div>
+        </dl>
         <p>{card.description}</p>
-        <button type="button" className="placeholder-btn">
-          Link placeholder
-        </button>
       </div>
     </article>
   )
@@ -233,17 +232,17 @@ export default function PNWExperiencePage() {
   return (
     <div className="pnw-page">
       <header className="hero">
-        <p className="eyebrow">BANA Conference Planning</p>
-        <h1>Pacific Northwest Activity Planner</h1>
+        <p className="eyebrow">BANA Seattle · Activity Guide</p>
+        <h1>Pacific Northwest Conference Activity Planner</h1>
         <p>
-          Use this page to compare options by time window: during the conference, before the
-          conference, and after the conference.
+          Explore destination options by timeline. Each section is organized for practical planning,
+          balancing conference commitments with regional experiences.
         </p>
       </header>
 
-      <nav className="chip-nav" aria-label="Section navigation">
+      <nav className="segmented-nav" aria-label="Activity planner sections">
         {pageData.map((section) => (
-          <a key={section.id} href={`#${section.id}`} className="chip-link">
+          <a key={section.id} href={`#${section.id}`} className="segment-link">
             {section.navLabel}
           </a>
         ))}
@@ -252,9 +251,14 @@ export default function PNWExperiencePage() {
       <main>
         {pageData.map((section) => (
           <section key={section.id} id={section.id} className="time-section">
-            <div className="section-header">
-              <img src={section.headerImage} alt={section.title} className="section-header__image" />
-              <div>
+            <div className="section-banner">
+              <ScenicImage
+                src={section.headerImage}
+                alt={section.title}
+                className="section-banner__image"
+                fallbackLabel="Destination image unavailable"
+              />
+              <div className="section-banner__content">
                 <h2>{section.title}</h2>
                 <p>{section.description}</p>
               </div>
